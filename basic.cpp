@@ -1,15 +1,20 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 int main() {
-  char fistCharacter = 'H';
-  char secondCharacter = 'i';
-  char space = ' ';
-  char exclamationMark = '!';
+  int ages[2];
+  int sumAge;
 
-  cout << fistCharacter + secondCharacter + space + exclamationMark << endl;
-  // the output is ASCII code
+  cout << "Please enter the 1st person age: ";
+  cin >> ages[0];
+
+  cout << "Please enter the 2nd person age: ";
+  cin >> ages[1];
+
+  sumAge = ages[0] + ages[1];
+
+  cout << "The sum of age is " << sumAge << endl;
 
   return 0;
 }
