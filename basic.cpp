@@ -3,26 +3,19 @@
 using namespace std;
 
 int main() {
-    int age;
+    int age1;
+    int age2;
+    int sumAge;
 
-    cout << "Please enter your age: ";
-    cin >> age;
+    cout << "Please enter the 1st person age: ";
+    cin >> age1;
 
-    cout << "You are " << age << " years old.\n";
+    cout << "Please enter the 2nd person age: ";
+    cin >> age2;
 
-    int newAge;
+    sumAge = age1 + age2;
 
-    cout << "Please enter your age again: ";
-    cin >> newAge;
-
-    age = newAge;
-
-    cout << "You are " << age << " years old.\n";
-
-    char favorite;
-    cout << "What's your favorite character: ";
-    cin >> favorite;
-    cout << "Your favorite character is " << favorite << endl;
+    cout << "The sum of age is " << sumAge << endl;
 
     return 0;
 }
