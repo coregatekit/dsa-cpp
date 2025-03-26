@@ -1,16 +1,19 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
-  string name;
+  int age;
+  cout << "How old are you? ";
+  cin >> age;
 
-  cout << "What's your name? ";
-  cin >> name;
-  cout << "Your name is " << name << endl;
+  if (age >= 18 && age <= 60) {
+    cout << "You are over 18 pass the criteria.\n";
+  } else if (age > 60) {
+    cout << "You are over 60 over the criteria.\n";
+  } else {
+    cout << "You are under 18.\n";
+  }
 
-  char firstCharacter = name[0];
-  cout << "Your first name character " << firstCharacter << endl;
   return 0;
 }
