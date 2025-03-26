@@ -3,31 +3,20 @@
 
 using namespace std;
 
+void greet() { cout << "Hello Gieselle" << endl; }
+string hi() { return "Hello Karina"; }
+int add(int a, int b) { return a + b; }
+float areaOfCircle(float radius) { return 3.14159265359 * 0.5 * radius; }
+
 int main() {
-  int ages[5];
-  int sumAge = 0;
+  greet();
+  string helloKarina = hi();
+  cout << helloKarina << endl;
 
-  for (int i = 0; i < 5; i++) {
-    cout << "person no " << (i + 1) << ": ";
-    cin >> ages[i];
-    sumAge += ages[i];
-  }
+  int sumNumber = add(3, 5);
+  cout << sumNumber << endl;
 
-  cout << "Sum of ages 5 person = " << sumAge << endl;
-
-  for (int i = 0; i < 5; i++) {
-    cout << "The age of person no" << (i + 1) << "is " << ages[i] << endl;
-  }
-
-  string name;
-  cout << "What's your name? ";
-  cin >> name;
-
-  cout << "Your name is " << name << endl;
-
-  for (int i = 0; i < name.length(); i++) {
-    cout << "character no " << (i + 1) << " is " << name[i] << endl;
-  }
-
+  float areaCircle = areaOfCircle(3);
+  cout << areaCircle << endl;
   return 0;
 }
