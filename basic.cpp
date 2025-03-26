@@ -3,22 +3,25 @@
 using namespace std;
 
 int main() {
-  int score;
-  cout << "Please enter your score: ";
-  cin >> score;
+  int count = 0;
 
-  if (score >= 80 && score <= 100) {
-    cout << "A" << endl;
-  } else if (score >= 70 && score < 80) {
-    cout << "B" << endl;
-  } else if (score >= 60 && score < 70) {
-    cout << "C" << endl;
-  } else if (score >= 50 && score < 60) {
-    cout << "D" << endl;
-  } else if (score >= 0 && score < 50) {
-    cout << "F" << endl;
-  } else {
-    cout << "Invalid score!\n";
+  cout << "=== While Loop ===\n";
+  while (count < 10) {
+    cout << "Count = " << count << endl;
+    count += 1;
   }
+
+  cout << "=== For Loop ===\n";
+  for (int i = 0; i < 10; i++) {
+    cout << "Count = " << i << endl;
+  }
+
+  cout << "=== Do While Loop ===\n";
+  int c = 0;
+  do {
+    cout << "Count = " << c << endl;
+    c += 1;
+  } while (c < 10);
+
   return 0;
 }
