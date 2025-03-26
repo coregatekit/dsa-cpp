@@ -1,27 +1,33 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-  int count = 0;
+  int ages[5];
+  int sumAge = 0;
 
-  cout << "=== While Loop ===\n";
-  while (count < 10) {
-    cout << "Count = " << count << endl;
-    count += 1;
+  for (int i = 0; i < 5; i++) {
+    cout << "person no " << (i + 1) << ": ";
+    cin >> ages[i];
+    sumAge += ages[i];
   }
 
-  cout << "=== For Loop ===\n";
-  for (int i = 0; i < 10; i++) {
-    cout << "Count = " << i << endl;
+  cout << "Sum of ages 5 person = " << sumAge << endl;
+
+  for (int i = 0; i < 5; i++) {
+    cout << "The age of person no" << (i + 1) << "is " << ages[i] << endl;
   }
 
-  cout << "=== Do While Loop ===\n";
-  int c = 0;
-  do {
-    cout << "Count = " << c << endl;
-    c += 1;
-  } while (c < 10);
+  string name;
+  cout << "What's your name? ";
+  cin >> name;
+
+  cout << "Your name is " << name << endl;
+
+  for (int i = 0; i < name.length(); i++) {
+    cout << "character no " << (i + 1) << " is " << name[i] << endl;
+  }
 
   return 0;
 }
