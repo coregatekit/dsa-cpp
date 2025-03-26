@@ -1,20 +1,16 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-  int ages[2];
-  int sumAge;
+  string name;
 
-  cout << "Please enter the 1st person age: ";
-  cin >> ages[0];
+  cout << "What's your name? ";
+  cin >> name;
+  cout << "Your name is " << name << endl;
 
-  cout << "Please enter the 2nd person age: ";
-  cin >> ages[1];
-
-  sumAge = ages[0] + ages[1];
-
-  cout << "The sum of age is " << sumAge << endl;
-
+  char firstCharacter = name[0];
+  cout << "Your first name character " << firstCharacter << endl;
   return 0;
 }
