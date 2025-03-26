@@ -8,7 +8,12 @@ int main() {
     cout << "Please enter your age: ";
     cin >> age;
 
-    cout << "You are " << age << " years old.";
+    cout << "You are " << age << " years old.\n";
+
+    char favorite;
+    cout << "What's your favorite character: ";
+    cin >> favorite;
+    cout << "Your favorite character is " << favorite << endl;
 
     return 0;
 }
