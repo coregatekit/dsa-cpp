@@ -3,17 +3,22 @@
 using namespace std;
 
 int main() {
-  int age;
-  cout << "How old are you? ";
-  cin >> age;
+  int score;
+  cout << "Please enter your score: ";
+  cin >> score;
 
-  if (age >= 18 && age <= 60) {
-    cout << "You are over 18 pass the criteria.\n";
-  } else if (age > 60) {
-    cout << "You are over 60 over the criteria.\n";
+  if (score >= 80 && score <= 100) {
+    cout << "A" << endl;
+  } else if (score >= 70 && score < 80) {
+    cout << "B" << endl;
+  } else if (score >= 60 && score < 70) {
+    cout << "C" << endl;
+  } else if (score >= 50 && score < 60) {
+    cout << "D" << endl;
+  } else if (score >= 0 && score < 50) {
+    cout << "F" << endl;
   } else {
-    cout << "You are under 18.\n";
+    cout << "Invalid score!\n";
   }
-
   return 0;
 }
