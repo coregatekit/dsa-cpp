@@ -1,22 +1,20 @@
 #include <iostream>
-#include <string>
+#include <vector>
 
 using namespace std;
 
-void greet() { cout << "Hello Gieselle" << endl; }
-string hi() { return "Hello Karina"; }
-int add(int a, int b) { return a + b; }
-float areaOfCircle(float radius) { return 3.14159265359 * 0.5 * radius; }
-
 int main() {
-  greet();
-  string helloKarina = hi();
-  cout << helloKarina << endl;
+  int myArray[] = {1, 2, 3, 4, 5};
+  cout << "Array elements: " << endl;
+  for (int i = 0; i < 5; i++) {
+    cout << myArray[i] << " \n";
+  }
 
-  int sumNumber = add(3, 5);
-  cout << sumNumber << endl;
+  vector<int> myVector = {1, 2, 3, 4, 5};
+  cout << "Vector elements: " << endl;
+  for (int i = 0; i < myVector.size(); i++) {
+    cout << myVector[i] << " \n";
+  }
 
-  float areaCircle = areaOfCircle(3);
-  cout << areaCircle << endl;
   return 0;
 }
