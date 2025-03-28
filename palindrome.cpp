@@ -20,13 +20,13 @@ public:
     int newX = 0;
     int tempX = x;
 
-    while (tempX > 0) {
+    while (tempX > newX) {
       newX = newX * 10;
       newX = newX + (tempX % 10);
       tempX = tempX / 10;
     }
 
-    if (x == newX) {
+    if ((tempX == newX) || (tempX == (newX / 10))) {
       return true;
     } else {
       return false;
