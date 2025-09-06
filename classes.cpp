@@ -2,10 +2,16 @@
 
 using namespace std;
 
+// Encapsulation  คือการป้องกันคุณสมบัติไม่ให้คนอื่นมาเปลี่ยนแปลงค่าได้
+// คนที่เปลี่ยนค่าได้คือตัวมันเองเท่านั้น
+// ตัวอย่าง private properties
+// ถ้าต้องการเปลี่ยนแปลงค่าให้ทำผ่าน setter method
+// ถ้าต้องการค่าให้เรียกผ่าน getter method
+
 class Person {
 private:
-  string name;
-  int age;
+  string name; // private attribute
+  int age;     // private attribute
 
   void showPrivateName() {
     cout << "this is private name: " << (name + name) << endl;
@@ -36,6 +42,9 @@ public: // Access specifier
   // Setter for the Age
   void setAge(int a) { age = a; }
 };
+
+// inheritance คือการสืบถอดคุณสมบัติจากคลาสหนึ่งไปอีกคลาสหนึ่ง
+// คลาสที่สืบถอดไป สามารถใช้คุณสมบัติของคลาสหลักได้
 
 int main() {
   // Creating an object of ther Person class
