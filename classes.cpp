@@ -46,6 +46,29 @@ public: // Access specifier
 // inheritance คือการสืบถอดคุณสมบัติจากคลาสหนึ่งไปอีกคลาสหนึ่ง
 // คลาสที่สืบถอดไป สามารถใช้คุณสมบัติของคลาสหลักได้
 
+class Vehicle {
+protected: // protected คือตัวแปรที่เป็น private แต่สามารถสืบทอดได้
+  string brand;
+
+public:
+  Vehicle(string b) : brand(b) {}
+
+  void honk() const { cout << "Beep beep! This is a " << brand << ".\n"; }
+};
+
+// Derived class
+class Car : public Vehicle {
+private:
+  string model;
+
+public:
+  Car(string b, string m) : Vehicle(b) { model = m; } // Constructure
+
+  void showModel() const {
+    cout << "It is a " << model << "and brand " << brand << ".\n";
+  }
+};
+
 int main() {
   // Creating an object of ther Person class
   Person person1("Alice", 30);
@@ -62,5 +85,8 @@ int main() {
   person2.setAge(21);
   person2.greet();
 
+  Car myCar("Toyota", "Corolla");
+  myCar.honk();
+  myCar.showModel();
   return 0;
 }
