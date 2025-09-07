@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ostream>
 
 using namespace std;
 
@@ -133,6 +134,36 @@ void callShow(const Base &obj) {
   obj.show(); // Dynamic binding happens here
 }
 
+// polymorphism คลาสที่มีการสืบทอดแบบเดียวกันแต่การ implement ข้างในไม่เหมือนกัน
+
+// Base class
+class ShapeBase {
+public:
+  // Virtual function
+  virtual void draw() const { cout << "Drawing a shape" << endl; }
+  virtual ~ShapeBase() {} // Virtual destructure for a safe polymorphic deletion
+};
+
+// Derived class 1
+class PolyCircle : public ShapeBase {
+public:
+  void draw() const override { // Override base class method
+    cout << "Drawing a circle" << endl;
+  }
+};
+
+// Derived class 2
+class PolyRectangle : public ShapeBase {
+public:
+  void draw() const override { // Override base class method
+    cout << "Drawing a rectangle" << endl;
+  }
+};
+
+void drawShape(const ShapeBase *shape) {
+  shape->draw(); // Polymorphic call
+}
+
 int main() {
   // Creating an object of ther Person class
   Person person1("Alice", 30);
@@ -164,5 +195,11 @@ int main() {
 
   callShow(base);
   callShow(derived);
+
+  PolyCircle pCircle;
+  PolyRectangle pRectangle;
+
+  drawShape(&pCircle);
+  drawShape(&pRectangle);
   return 0;
 }
