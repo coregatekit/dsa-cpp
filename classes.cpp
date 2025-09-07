@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 using namespace std;
@@ -69,6 +70,70 @@ public:
   }
 };
 
+// abstraction class คือการสร้างคลาสต้นแบบเมื่อมีตนเรียกใช้
+// คลาสนั้นจะต้อง implement ตามคลาสต้นแบบนั้นๆ แต่เนื้อหาข้างในอาจจะต่างกันไป
+
+// keyword virtual ใช้สำหรับบอกว่า ตัวแปรหรือฟังก์ชันนั้นจะถูก override ได้
+
+// Abstract base class
+class Shape {
+public:
+  // Pure virtual function
+  virtual double
+  calculateArea() const = 0; // No implementation must be override
+
+  // Virtual destructure for safe polymorphic use
+  // มันจะ clear memory เมื่อมีการลบ instance นี้ออกไป
+  virtual ~Shape() {}
+};
+
+// Derived class
+class Circle : public Shape {
+private:
+  double radius;
+
+public:
+  Circle(double r) : radius(r) {}
+
+  double calculateArea() const override {
+    return M_PI * radius * radius; // implement for circle area
+  }
+};
+
+// Another derived class
+class Rectangle : public Shape {
+private:
+  double length, width;
+
+public:
+  Rectangle(double l, double w) : length(l), width(w) {}
+
+  double calculateArea() const override {
+    return length * width; // implement for rectangle area
+  }
+};
+
+// another example
+class Base {
+public:
+  virtual void show() const { // Virtual function
+    cout << "Base show" << endl;
+  }
+
+  virtual ~Base() {} // Virtual destructure
+};
+
+class Derived : public Base {
+public:
+  void show() const override { // Override base class function
+    cout << "Derived show" << endl;
+  }
+};
+
+void callShow(const Base &obj) {
+  obj.show(); // Dynamic binding happens here
+}
+
 int main() {
   // Creating an object of ther Person class
   Person person1("Alice", 30);
@@ -88,5 +153,17 @@ int main() {
   Car myCar("Toyota", "Corolla");
   myCar.honk();
   myCar.showModel();
+
+  Circle circle(5);
+  Rectangle rectangle(10, 20);
+
+  cout << "Circle area: " << circle.calculateArea() << endl;
+  cout << "Rectangle area: " << rectangle.calculateArea() << endl;
+
+  Base base;
+  Derived derived;
+
+  callShow(base);
+  callShow(derived);
   return 0;
 }
